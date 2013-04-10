@@ -17,11 +17,19 @@
     $max = $_GET["max"];
     $category  = $_GET["category"];
  
-    $keyword = name2keyword( $name );
+    $keywords = name2keywords( $name );
     $genres = get_genres( $sex, $age, $relation, $category );
 
     // API呼び出し
-    $response = get_products_info( $keyword, $sex, $age, $genres, $min, $max );
+	// 結果が1件以上になるまでkeywordを変えながらAPIを叩く
+	foreach( $keywords as $keyword ){
+    	$response = get_products_info( $keyword, $sex, $age, $genres, $min, $max );
+		$tmp = json_decode( $response->getHttpResponse()->getContents() );
+		echo "<!-- " . $keyword . " : " . $tmp->count . "-->\n";
+		if( $tmp->count > 0 ){
+			break;
+		}
+	}
 ?>
 
 <?php /* TODO:TABLEではなくCSSでをカラムを分ける */ ?>
