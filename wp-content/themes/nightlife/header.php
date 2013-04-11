@@ -18,6 +18,7 @@
 <style type="text/css" media="screen">
 <!-- @import url( <?php bloginfo('stylesheet_url'); ?> ); -->
 </style>
+<?php if ( $_SERVER['SERVER_PORT']=='80' ) { include_once("analyticstracking.php"); } ?>
 </head>
 <body>
 
