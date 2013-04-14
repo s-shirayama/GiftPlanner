@@ -3,6 +3,10 @@
 <div style="clear:both;"></div>
 <div style="clear:both;"></div>
 
+ <div id="gift_infobar">
+  <a href="<?php echo get_settings('home'); ?>/description">GiftPlanner でできること</a>
+ </div>
+
  <div id="gift_style2">
   【免責事項】<br />
   本サイトは個人名から極力最適なプレゼント・商品を検索するサービスです。<br/>
