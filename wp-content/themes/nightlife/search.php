@@ -66,7 +66,7 @@ foreach( $keywords as $keyword ){
 </div>
 <div class="gift_search_box">
 
-<form method="GET">
+<form method="GET" name="search">
 <input type="hidden" name="s" value="<?php echo $name; ?>" />
 <h2>もっと検索したい！</h2><br />
 <?php echo $name; ?>　さんの<br /><br />
@@ -120,6 +120,18 @@ foreach( $keywords as $keyword ){
 
 <div class="gift_center"><input type="submit" value="これで探す！" /></div>
 </form>
+
+<?php // 検索パラメータからFORMの初期値をセット(GP-14) ?>
+<script type="text/javascript">
+<?php if( $sex !== "" && $sex !== undefined && !is_null($sex) ){ ?>
+document.search.sex["<?php echo $sex ?>"].checked = true;
+<?php } ?>
+document.search.age.value = "<?php echo $age ?>";
+document.search.relation.value = "<?php echo $relation ?>";
+document.search.min.value = "<?php echo $min ?>";
+document.search.max.value = "<?php echo $max ?>";
+document.search.category.value = "<?php echo $category ?>";
+</script>
 
 </div>
 
