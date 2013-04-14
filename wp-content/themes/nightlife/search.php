@@ -3,33 +3,33 @@
 <div id="content">
 
 <?php /* ?>
-<?php include(TEMPLATEPATH."/l_sidebar.php");?>
-<?php */ ?>
+		 <?php include(TEMPLATEPATH."/l_sidebar.php");?>
+		 <?php */ ?>
 
 <div id="contentmiddle">
 
 <?php
-    $name = $_GET["s"];
-    $sex = $_GET["sex"];
-    $age = $_GET["age"];
-    $relation = $_GET["relation"];
-    $min = $_GET["min"];
-    $max = $_GET["max"];
-    $category  = $_GET["category"];
- 
-    $keywords = name2keywords( $name );
-    $genres = get_genres( $sex, $age, $relation, $category );
+$name = $_GET["s"];
+$sex = $_GET["sex"];
+$age = $_GET["age"];
+$relation = $_GET["relation"];
+$min = $_GET["min"];
+$max = $_GET["max"];
+$category  = $_GET["category"];
 
-    // API呼び出し
-	// 結果が1件以上になるまでkeywordを変えながらAPIを叩く
-	foreach( $keywords as $keyword ){
-    	$response = get_products_info( $keyword, $sex, $age, $genres, $min, $max );
+$keywords = name2keywords( $name );
+$genres = get_genres( $sex, $age, $relation, $category );
+
+// API呼び出し
+// 結果が1件以上になるまでkeywordを変えながらAPIを叩く
+foreach( $keywords as $keyword ){
+		$response = get_products_info( $keyword, $sex, $age, $genres, $min, $max );
 		$tmp = json_decode( $response->getHttpResponse()->getContents() );
 		echo "<!-- " . $keyword . " : " . $tmp->count . "-->\n";
 		if( $tmp->count > 0 ){
-			break;
+				break;
 		}
-	}
+}
 ?>
 
 <?php /* TODO:TABLEではなくCSSでをカラムを分ける */ ?>
