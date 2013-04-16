@@ -24,6 +24,14 @@
 
 <div id="gift_brank"></div>
 
+<div style="text-align: center;">
+<h2>ギフトプランナー新着情報</h2>
+<?php
+ /* ニュースカテゴリ記事新着 */
+ include 'GP_news_feed.php';
+?>
+</div>
+
 <!--<ul><?php get_archives('postbypost', 5); ?></ul>-->
 
 </div><!-- #contentmiddle -->
