@@ -5,6 +5,8 @@
 
  <div id="gift_infobar">
   <a href="<?php echo get_settings('home'); ?>/description">GiftPlanner でできること</a>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="<?php echo get_settings('home'); ?>/sitemap">サイトマップ</a>
  </div>
 
  <div id="gift_style2">
