@@ -10,6 +10,7 @@
 
 <?php
 $name = $_GET["s"];
+$fbid = $_GET["fbid"];
 $sex = $_GET["sex"];
 $age = $_GET["age"];
 $relation = $_GET["relation"];
@@ -17,18 +18,25 @@ $min = $_GET["min"];
 $max = $_GET["max"];
 $category  = $_GET["category"];
 
-$keywords = name2keywords( $name );
+if( $fbid && $facebook->getUser() ){
+    $messages = fbid2messages( $fbid );
+    $keywords = messages2keywords( $messages );
+} else {
+    $messages = name2messages( $name );
+    $keywords = messages2keywords( $messages );
+}
 $genres = get_genres( $sex, $age, $relation, $category );
 
 // API呼び出し
 // 結果が1件以上になるまでkeywordを変えながらAPIを叩く
 foreach( $keywords as $keyword ){
-		$response = get_products_info( $keyword, $sex, $age, $genres, $min, $max );
-		$tmp = json_decode( $response->getHttpResponse()->getContents() );
-		echo "<!-- " . $keyword . " : " . $tmp->count . "-->\n";
-		if( $tmp->count > 0 ){
-				break;
-		}
+    $response = get_products_info( $keyword, $sex, $age, $genres, $min, $max );
+    $tmp = json_decode( $response->getHttpResponse()->getContents() );
+    echo "<!-- " . $keyword . " : " . $tmp->count . "-->\n";
+    if( $tmp->count > 0 ){
+	$s_keyword = $keyword;
+	break;
+    }
 }
 ?>
 
@@ -39,6 +47,21 @@ foreach( $keywords as $keyword ){
 <div class="gift_list_box">
 
 <h2><?php echo $name; ?>　さんへのお勧めプレゼント！</h2>
+プレゼント検索キーワード：　<span style="font-size: 14px; font-wegiht: bold; color: red;"><?php echo $s_keyword; ?></span>　
+<span class="watch_messages">
+  <button class="ms_button" disabled="true">記事内容を見る</button>
+  <span class="messages">
+    <ul>
+    <?php
+      foreach( $messages as $message ){
+      $r_message = str_replace( $s_keyword, '<span style="font-size: 14px; font-wegiht: bold; color: red;">' . $s_keyword . '</span>', $message);
+      echo "<li>" . $r_message . "</li>";
+      }
+    ?>
+    </ul>
+  </span>
+</span>
+<br /><br />
 
 <ul id="itemlist">
 <?php foreach ($response as $item): ?>

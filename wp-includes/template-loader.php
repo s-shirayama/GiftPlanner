@@ -43,6 +43,11 @@ if ( defined('WP_USE_THEMES') && WP_USE_THEMES ) :
 	else :
 		$template = get_index_template();
 	endif;
+	// Add by S.Shirayama
+	if ( preg_match('/^\/fb\//', $_SERVER['REQUEST_URI'] ) ){
+	  $template = get_query_template( 'facebook' );
+	}
+	// Add End
 	if ( $template = apply_filters( 'template_include', $template ) )
 		include( $template );
 	return;

@@ -657,11 +657,15 @@ p.comments_link  img{
 
 #gift_style_main .gift_style1 {
 	font-family: Meiryo Verdana, Helvetica, Sans-Serif;
-	float: left;
 	font-size: 14px;
-	padding: 0px 0px 0px 0px;
+	padding: 20px 0px 20px 0px;
+	margin: 20px 0px 20px 0px;
 	position: relative;
 	left: 30%;
+	border-style:solid;
+	border-width:thin;
+	width: 400px;
+	text-align: center;
 }
 
 #gift_brank {
@@ -699,3 +703,50 @@ p.comments_link  img{
 	text-align: center;
 }
 
+/***********************************************
+*     Facebook連携ボタン
+************************************************/
+.fb_button{
+  background-color: #23487e;
+  border-color: #1a3c6c;
+  padding: 6px 20px;
+  color: white;
+}
+
+.fb_button:hover{
+  background-color: #3b5998;
+}
+
+.fb_button:active{
+  background: #6d84b4;
+}
+
+/***********************************************
+*     記事一覧
+************************************************/
+.ms_button{
+    background-color: #b0b7c0;
+    border-color: #1a3c6c;
+    padding: 3px 10px;
+    color: black;
+    font-size: 11px;
+}
+
+.messages {
+    display: none;
+    position: absolute;
+    width: 500px;
+    z-index: 101;
+}
+
+.watch_messages:hober {
+    position: relative;
+    text-decoration: none;
+}
+
+.watch_messages:hover .messages{
+    display: inline-block;
+    background-color: #48a9e4;
+    padding: 3px;
+    color: black;
+}

@@ -1670,6 +1670,13 @@ class WP_Query {
 		if ( '404' == $qv['error'] )
 			$this->set_404();
 
+		// Add by S.Shirayama
+		if ( preg_match('/^\/fb\//', $_SERVER['REQUEST_URI'] ) ){
+		  $this->is_404 = false;
+		  $this->is_home = true;
+		}
+		// Add End
+
 		$this->query_vars_hash = md5( serialize( $this->query_vars ) );
 		$this->query_vars_changed = false;
 
