@@ -8,10 +8,7 @@ require_once '/var/lib/php/rws-php-sdk-master/sample/helper.php';
 
 // FacebookAPI呼び出し用
 require_once( WP_CONTENT_DIR . '/lib/facebook-php-sdk/src/facebook.php' );
-// TODO:アプリ情報の外だし
-$appId = '232546796884104';
-$secret = 'cfb32e39e86b1f054f339b1e28d3e7bd';
-$facebook = new Facebook(array('appId' => $appId, 'secret' => $secret));
+$facebook = new Facebook(array('appId' => FB_APP_ID, 'secret' => FB_SECRET));
 
 // FacebookのIDに紐づく投稿情報を抽出する関数
 function fbid2messages( $fbid ){
