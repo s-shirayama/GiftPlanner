@@ -19,7 +19,7 @@
 	</div>
 
 	<div class="gift_style1">
-	  <a href="/fb/"><button class="fb_button">Facebookの友達へのプレゼントを探す！</button>
+	  <a href="/fb/"><button class="fb_button">Facebookの友達へのプレゼントを探す！</button></a>
 	</div>
 
 
