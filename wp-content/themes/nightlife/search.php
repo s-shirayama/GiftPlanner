@@ -40,6 +40,9 @@ foreach( $keywords as $keyword ){
 }
 ?>
 
+    <?php
+      echo get_the_social_widgets();
+    ?>
     <div id="gift_style_main">
 
       <div class="gift_list_box">

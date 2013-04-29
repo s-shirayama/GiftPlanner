@@ -6,7 +6,9 @@
   <?php */ ?>
 
   <div id="contentmiddle">
-
+    <?php
+      echo get_the_social_widgets();
+    ?>
     <h1>名前を入力すると、 GiftPlanner がプレゼントを探してきます！</h1>
 
     <div id="gift_style_main">
