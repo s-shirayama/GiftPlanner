@@ -115,7 +115,7 @@ function sentences2keywords( $sentences ){
 // 引数で渡されたarrayから以下を取り除く
 // ・英語の文
 // ・$prohibition(引数)
-function remove_prohibition_keywords( $keywords, $prohibition ){
+function remove_prohibition_keywords( $keywords, $prohibition = '' ){
 	$res = array();
 	foreach( $keywords as $keyword ){
 		if( preg_match( '/[a-zA-Z] [a-zA-Z]/', $keyword ) === 0 && 
