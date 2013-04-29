@@ -66,19 +66,19 @@ foreach( $keywords as $keyword ){
 	  <ul>
 	    <?php if (!empty($item['smallImageUrls'][0]['imageUrl'])): ?>
 	    <li class="image">
-	      <a href="<?php echo h($item['affiliateUrl']) ?>" class="itemname" title="<?php echo h($item['itemName']) ?>">
+	      <a href="<?php echo h($item['affiliateUrl']) ?>" class="itemname" title="<?php echo h($item['itemName']) ?>" target="_blank">
 	      <img src="<?php echo h($item['mediumImageUrls'][0]['imageUrl']) ?>">
 	    </a>
 	  </li>
 	  <?php endif; ?>
 	  <!--<li class="addbookmark"><a href="bookmark.php?itemCode=<?php echo h($item['itemCode']) ?>&amp;keyword=<?php echo h($keyword) ?>&amp;page=<?php echo h($page) ?>">ブックマークへ追加</a></li>-->
 	  <li class="item">
-	    <a href="<?php echo h($item['affiliateUrl']) ?>" class="itemname" title="<?php echo h($item['itemName']) ?>">
+	    <a href="<?php echo h($item['affiliateUrl']) ?>" class="itemname" title="<?php echo h($item['itemName']) ?>" target="_blank">
 	    <?php echo h(mb_strimwidth($item['itemName'], 0, 50, '...', 'UTF-8')) ?></a>
 	  </li>
 	  <li class="price"><?php echo h(number_format($item['itemPrice'])) ?>円</li>
 	  <li class="aflink">
-	    > <a href="<?php echo h($item['affiliateUrl']) ?>" class="itemname">
+	    > <a href="<?php echo h($item['affiliateUrl']) ?>" class="itemname" target="_blank">
 	    商品詳細はこちらから</a>
 	  </li>
 	  <!--<li class="description"><?php echo h($item['itemCaption']) ?></li>-->
