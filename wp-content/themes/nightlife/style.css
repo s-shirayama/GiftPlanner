@@ -24,6 +24,7 @@ body {
     font-family: 'メイリオ','Meiryo','ヒラギノ角ゴ Pro W3','Hiragino Kaku','MS UI Gothic';
     margin: 0px auto 0px;
     padding: 0px;
+    width: 800px;
 }
 
 #wrap {
@@ -33,18 +34,31 @@ body {
     padding: 0px;
 }
 
+h1 {
+    font-size: 10.5px;
+    padding: 3px;
+    margin: 0px;
+}
+
+h2 {
+    color: #333333;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 37px 0px;
+    margin: 0px;
+    text-align: center;
+}
+
 /************************************************
  *	Hyperlinks									*
  ************************************************/
 
 a, a:visited {
     color: #666666;
-    text-decoration: underline;
 }
 
 a:hover {
     color: #333333;
-    text-decoration: underline;
 }
 
 /************************************************
@@ -130,20 +144,13 @@ a:hover {
  ************************************************/
 
 #header {
-    height: 30px;
     margin: 0px auto 0px;
     padding: 0px 0px 0px 0px;
-    text-align: center;
-    text-transform: uppercase;
 }
 
 .blogtitle {
     margin: 0px;
     font-size: 10px;
-    font-weight: normal
-    color: #FFFFFF;
-    text-align: left;
-    text-transform: uppercase;
 }
 
 .blogtitle a {
@@ -274,20 +281,20 @@ a:hover {
 
 .entry-content { 
     clear: both;
-    margin-left: 17%;
+    margin-left: 10%;
 }
 
 #content {
     margin: 0px auto 0px;
     padding: 0px;
+    clear: both;
 }
 
 #content p{
     padding: 0px 0 15px 0px;
     margin: 0px;
     line-height: 20px;
-    font-size: 13px;
-    font-weight: bold;
+    font-size: 13.5px;
 }
 
 #content p img{
@@ -316,6 +323,16 @@ a:hover {
     text-decoration: none;
 }
 
+#content h2 a  {
+    color: #333333;
+    text-decoration: none;
+}
+
+#content h1 a:hover {
+    color: #AAAAAA;
+    text-decoration: none;
+}
+
 #content ol{
     margin: 0px 0px 0px 20px;
     padding: 0px 0px 15px 0px;
@@ -327,8 +344,8 @@ a:hover {
 }
 
 #contentmiddle {
-    margin: 0px 0px 0px 0px;
-    padding: 20px 0px 20px 20px;
+    margin: 20px 0px;
+    padding: 0px;
 }
 
 #contentmiddle p img{
@@ -392,7 +409,22 @@ blockquote{
 
 .contenttitle {
     float: left;
-    margin-left: 17%;
+    margin-left: 7%;
+    clear: both;
+}
+
+#content_archive p {
+    margin: 7% 0px 0px 7%;
+    padding: 0px;
+    font-size: 11.5px;
+    clear: both;
+}
+
+#content_archive h2 {
+    margin: 0px 0px 6% 7%;
+    padding: 0px;
+    font-size: 15px;
+    float: left;
 }
 
 #contentmiddle ul li {
@@ -448,7 +480,7 @@ blockquote{
 }
 
 #footer a, #footer a:visited {
-    color: #C0C0C0;
+    /*color: #C0C0C0;*/
     text-decoration: underline;
 }
 
@@ -608,20 +640,15 @@ p.comments_link  img{
 /***********************************************
  *     Shiotsuka
  ************************************************/
-#gift_style_main {
-    position: relative;
-    overflow: hidden;
+
+#gift_style_top {
+    margin-left: 25%;
 }
 
-#gift_style_main form {
-}
-
-#gift_style_main .gift_style1 {
+#gift_style_top .gift_style1 {
     font-size: 14px;
     padding: 20px 0px 20px 0px;
     margin: 20px 0px 20px 0px;
-    position: relative;
-    left: 30%;
     border-style:solid;
     border-width:thin;
     width: 400px;
@@ -638,21 +665,24 @@ p.comments_link  img{
 
 #gift_style2 {
     padding: 77px 0px 13px 0px;
-    color: #C0C0C0;
+    /*color: #C0C0C0;*/
     clear: left;
     text-align: center;
 }
 
+#gift_style_main {
+    position: relative;
+    overflow: hidden;
+}
+
 #gift_style_main .gift_list_box {
     float: left;
-    position: relative;
-    left: 7%;
+    margin-left: 5%;
 }
 
 #gift_style_main .gift_search_box {
     float: left;
-    position: relative;
-    left: 17%;
+    margin-left: 13%;
 }
 
 .gift_center {
@@ -661,7 +691,6 @@ p.comments_link  img{
 
 #gift_breadcrumb ul {
     list-style-type: none;
-    margin-top: 27px;
 }
 
 #gift_breadcrumb li {

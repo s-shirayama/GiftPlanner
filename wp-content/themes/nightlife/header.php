@@ -21,7 +21,7 @@
     <?php if ( $_SERVER['SERVER_PORT']=='80' ) { include_once("analyticstracking.php"); } ?>
   </head>
   <body>
-
+    <?php /* h1生成 */ include 'GP_h1_gen.php'; ?>
     <div id="header">
       <div class="blogtitle">
 	<a href="<?php echo get_settings('home'); ?>/"><?php // bloginfo('name'); ?><img src="<?php echo get_settings('home'); ?>/wp-content/themes/nightlife/images_gift/logo.png" alt="プレゼント選びのギフトプランナー" /></a>
@@ -38,6 +38,4 @@
 	     </div>
 	     */ ?>
 
-	     <?php /* パンくず追加 by Shiotsuka */
-     include_once("GP_pan_list.php");
-?>
+	     <?php /* パンくず追加 by Shiotsuka */ include_once("GP_pan_list.php"); ?>

@@ -11,7 +11,7 @@
 		<h4><?php the_time('j'); ?></h4>
 	</div>-->
 	<div class="contenttitle">
-		<h1><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+		<h2><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 		<!--<p>カテゴリー <?php the_category(', ') ?></p>-->
 	</div>
 	<div class="entry-content"><?php the_content(__('続きを読む'));?></div>

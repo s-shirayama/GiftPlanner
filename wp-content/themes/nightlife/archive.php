@@ -10,9 +10,9 @@
 	<h3><?php the_time('M'); ?></h3>
 	<h4><?php the_time('j'); ?></h4>
 	</div>-->		
-	<div class="contenttitle">
-	  <p><?php the_time('M');?><?php the_time('j'); echo '日'?></p>
-	  <h1><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+	<div id="content_archive">
+	  <p><?php the_time('Y'); echo '年' ?><?php the_time('M');?><?php the_time('j'); echo '日'?></p>
+	  <h2><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 	  <!--<p>カテゴリー <?php the_category(', ') ?>&nbsp;|&nbsp;<?php comments_popup_link('コメントする', ' コメント (1)', 'コメント (%)'); ?></p>-->
 	</div>
 	<!--<div class="entry-content"><?php the_excerpt(__('続きを読む'));?></div>-->
