@@ -2,13 +2,16 @@
 require_once (ABSPATH . WPINC . '/class-snoopy.php');
 
 // 楽天API呼び出し用
-require_once '/var/lib/php/rws-php-sdk-master/autoload.php';
-require_once '/var/lib/php/rws-php-sdk-master/sample/config.php';
-require_once '/var/lib/php/rws-php-sdk-master/sample/helper.php';
+require_once( WP_CONTENT_DIR . '/lib/rws-php-sdk-master/autoload.php' );
 
 // FacebookAPI呼び出し用
 require_once( WP_CONTENT_DIR . '/lib/facebook-php-sdk/src/facebook.php' );
 $facebook = new Facebook(array('appId' => FB_APP_ID, 'secret' => FB_SECRET));
+
+// HTML Escape
+function h($string) {
+    return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
+}
 
 // FacebookのIDに紐づく投稿情報を抽出する関数
 function fbid2messages( $fbid ){
@@ -70,7 +73,7 @@ function name2messages( $name ){
 	// note how referer is set manually
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_REFERER, "http://54.249.250.63/wordpress/");
+	curl_setopt($ch, CURLOPT_REFERER, 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
 	curl_setopt($ch, CURLOPT_URL, $url);
 
 	// now, process the JSON string
@@ -98,10 +101,10 @@ function name2messages( $name ){
 function sentences2keywords( $sentences ){
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_REFERER, "http://54.249.250.63/wordpress/");
+	curl_setopt($ch, CURLOPT_REFERER, 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
 	curl_setopt($ch, CURLOPT_URL, $url);
-	$url = "http://jlp.yahooapis.jp/KeyphraseService/V1/extract?appid=dj0zaiZpPXg2NThaaVV0TjN0YyZkPVlXazlNVmRXTkhGTk5XTW1jR285TUEtLSZzPWNvbnN1bWVyc2VjcmV0Jng9ZGE-&output=json&sentence="
-		. urlencode( $sentences );
+	$url = "http://jlp.yahooapis.jp/KeyphraseService/V1/extract?appid="
+	    . YH_APP_ID . "&output=json&sentence=" . urlencode( $sentences );
 	curl_setopt($ch, CURLOPT_URL, $url);
 
 	$json = json_decode( curl_exec($ch) );
@@ -154,13 +157,8 @@ function get_products_info( $keyword, $sex, $age, $genre, $min, $max ){
 	// アフィリエイトIDをセット (任意) Set Affiliate ID (Optional)
 	$rwsclient->setAffiliateId(RAKUTEN_APP_AFFILITE_ID);
 
-	// プロキシの設定が必要な場合は、ここで設定します。
-	// If you want to set proxy, please set here.
-	// $rwsclient->setProxy('proxy');
-
 	// 楽天市場商品検索API2 で商品を検索します
 	// Search by IchibaItemSearch (http://webservice.rakuten.co.jp/api/ichibaitemsearch/)
-
 	$api_arg = array();
 	if ( $keyword && !$genre ) $api_arg = array_merge( $api_arg, array( 'keyword' => $keyword ) );
 	$api_arg = array_merge( $api_arg, array( 'page'    => $page ) );

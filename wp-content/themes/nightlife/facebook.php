@@ -29,7 +29,7 @@ if( $facebook->getUser() ) {
 ?>
 
 <style type="text/css">
-#contentmiddle ul .fb_fr_lst {
+  #contentmiddle ul .fb_fr_lst {
   border: 1px solid #e9eaed;
   display: inline-block;
   margin: 0 0 13px 13px;
@@ -79,14 +79,14 @@ if( $facebook->getUser() ) {
   tmp_string += '<input type="button" value="もっと見る" onclick="update_fb_fr_lst(' + (CNT_LIMIT + 10) + ')" />\n';
   }
   document.getElementById("fb_fr_lst").innerHTML = tmp_string;
-}
-var FB_FR_LST = Array();
-var tmp = Array();
-
-<?php
-  foreach( $friends['data'] as $friend ){
-  echo "FB_FR_LST.push({name:'" . $friend['name'] . "', id:'" . $friend['id'] . "', img:'" . $friend['picture']['data']['url'] . "'});\n";
   }
+  var FB_FR_LST = Array();
+  var tmp = Array();
+
+  <?php
+foreach( $friends['data'] as $friend ){
+    echo "FB_FR_LST.push({name:'" . $friend['name'] . "', id:'" . $friend['id'] . "', img:'" . $friend['picture']['data']['url'] . "'});\n";
+}
 ?>
   
 </script>
