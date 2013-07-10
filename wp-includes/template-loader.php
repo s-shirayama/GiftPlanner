@@ -47,8 +47,12 @@ if ( defined('WP_USE_THEMES') && WP_USE_THEMES ) :
 	if ( preg_match('/^\/fb\//', $_SERVER['REQUEST_URI'] ) ){
 	  $template = get_query_template( 'facebook' );
 	}
+	if ( preg_match('/^\/ranking\//', $_SERVER['REQUEST_URI'] ) ){
+	  $template = get_query_template( 'ranking' );
+	}
 	// Add End
 	if ( $template = apply_filters( 'template_include', $template ) )
 		include( $template );
 	return;
 endif;
+

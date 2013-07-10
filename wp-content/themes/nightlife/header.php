@@ -19,15 +19,30 @@
       <!-- @import url( <?php bloginfo('stylesheet_url'); ?> ); -->
     </style>
     <?php if ( $_SERVER['SERVER_PORT']=='80' ) { include_once("analyticstracking.php"); } ?>
+	<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="<?php echo get_settings('home'); ?>/wp-content/themes/nightlife/jquery.als-1.1.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("#my-als-list").als({
+					visible_items: 5,
+					scrolling_items: 3,
+					orientation: "horizontal",
+					circular: "no",
+					autoscroll: "no",
+		});
+	});	
+	</script>
   </head>
   <body>
+	<div id="wrap">
     <?php /* h1生成 */ include 'GP_h1_gen.php'; ?>
     <div id="header">
       <div class="blogtitle">
-	<a href="<?php echo get_settings('home'); ?>/"><?php // bloginfo('name'); ?><img src="<?php echo get_settings('home'); ?>/wp-content/themes/nightlife/images_gift/logo.png" alt="プレゼント選びのギフトプランナー" /></a>
-	<p>－名前で探すプレゼント－</p>
+	<a href="<?php echo get_settings('home'); ?>/"><?php // bloginfo('name'); ?><img src="<?php echo get_settings('home'); ?>/wp-content/themes/nightlife/images_gift/gp_logo.png" alt="プレゼント選びのギフトプランナー" /></a>
       </div>
-    </div>
+	<!-- <?php echo get_the_social_widgets(); ?> -->
+	</div>
 
     <?php /* 一旦メニューはコメントアウト by Shirayama
 		 <div id="navbar">

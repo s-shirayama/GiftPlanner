@@ -162,7 +162,7 @@ function get_products_info( $keyword, $sex, $age, $genre, $min, $max ){
 	$api_arg = array();
 	if ( $keyword && !$genre ) $api_arg = array_merge( $api_arg, array( 'keyword' => $keyword ) );
 	$api_arg = array_merge( $api_arg, array( 'page'    => $page ) );
-	$api_arg = array_merge( $api_arg, array( 'hits'    => 3 ) );
+	$api_arg = array_merge( $api_arg, array( 'hits'    => 10 ) );
 	$api_arg = array_merge( $api_arg, array( 'sort'    => '-reviewAverage' ) );
 	$api_arg = array_merge( $api_arg, array( 'orFlag'    => '1' ) );
 	if ( $genre ) $api_arg = array_merge( $api_arg, array( 'genreId' => $genre ) );
@@ -170,6 +170,36 @@ function get_products_info( $keyword, $sex, $age, $genre, $min, $max ){
 	if ( $max ) $api_arg = array_merge( $api_arg, array( 'maxPrice'=> $max ) );
 
 	return $rwsclient->execute('IchibaItemSearch', $api_arg );
+}
+
+// ランキングの種類(key)からランキングマスタ情報の取得ー＞ランキング情報の取得
+// 引数はkey情報、ランキングの件数
+function get_ranking_info_from_key($key, $count){
+    global $wpdb;
+    $result = array();
+    $res = $wpdb->get_results("select * from gp_ranking_mst where name = '" . $key . "' order by rank", ARRAY_A);
+    foreach( $res as $rank_info ){
+	$tmp = get_ranking( null, null, $rank_info['genreId'] )->getData();
+	array_push( $result, array( 'items' => array_slice( $tmp['Items'], 0, $count ), 'genre' => $rank_info['genreName'] ));
+    }
+    return $result;
+}
+
+// ランキング情報を取得する関数
+// 引数は性別、年代、ジャンル
+function get_ranking( $sex, $age, $genre ){
+    // Clientインスタンスを生成
+    $rwsclient = new RakutenRws_Client();
+    $rwsclient->setApplicationId(RAKUTEN_APP_ID);
+    $rwsclient->setAffiliateId(RAKUTEN_APP_AFFILITE_ID);
+    
+    // APIの引数をセット
+    $api_arg = array();
+    if ( $sex ) $api_arg = array_merge( $api_arg, array( 'sex'=> $sex ) );
+    if ( $age ) $api_arg = array_merge( $api_arg, array( 'age'=> $age ) );
+    if ( $genre ) $api_arg = array_merge( $api_arg, array( 'genreId' => $genre ) );
+    
+    return $rwsclient->execute('IchibaItemRanking', $api_arg );
 }
 
 

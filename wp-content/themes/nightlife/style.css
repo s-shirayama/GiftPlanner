@@ -18,36 +18,35 @@
    */
 
 body {
-    background: url(images_gift/background.jpg) top center no-repeat;
-    color: #333333;
-    font-size: 11px;
+    background: #EEE url(images_gift/gp_bg_container.gif) repeat-x 0% 0%;
+    font-size: 12px;
     font-family: 'メイリオ','Meiryo','ヒラギノ角ゴ Pro W3','Hiragino Kaku','MS UI Gothic';
     margin: 0px auto 0px;
     padding: 0px;
-    width: 800px;
 }
 
 #wrap {
-    background: #C0C0C0;
     width: 861px;
     margin: 0px auto 0px;
     padding: 0px;
 }
 
 h1 {
-    font-size: 10.5px;
-    padding: 3px;
-    margin: 0px;
+    font-size: 11.5px;
+    padding: 0px;
+    margin: 8px 0px 0px 0px;
+    color: rgb(75, 75, 75);
+    text-align: right;
 }
 
-h2 {
-    color: #333333;
-    font-size: 24px;
-    font-weight: bold;
-    padding: 37px 0px;
-    margin: 0px;
-    text-align: center;
-}
+/*h2 {
+  color: #333333;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 37px 0px;
+  margin: 0px;
+  text-align: center;
+  }*/
 
 /************************************************
  *	Hyperlinks									*
@@ -55,10 +54,13 @@ h2 {
 
 a, a:visited {
     color: #666666;
+	text-decoration: none;
 }
 
 a:hover {
     color: #333333;
+	text-decoration: none;
+	font-weight:bold;
 }
 
 /************************************************
@@ -151,6 +153,8 @@ a:hover {
 .blogtitle {
     margin: 0px;
     font-size: 10px;
+    position: relative;
+    top: -8px;
 }
 
 .blogtitle a {
@@ -159,7 +163,7 @@ a:hover {
     text-transform: uppercase;
 }
 
-.blogtitle a:hover{
+.blogtitle a:hover {
     color: #999999;
     text-decoration: none;
 }
@@ -277,32 +281,235 @@ a:hover {
  *	Content 					     		    * 
  ************************************************/
 
+/* Search */
+/* Image in Text Box */
+.gp_tb11 {
+    background:#FFFFFF url(images_gift/gp_search.png) no-repeat 4px 4px;
+    padding:4px 4px 4px 22px;
+    margin:3px 0px;
+    border:1px solid #CCCCCC;
+    width:250px;
+    height:18px;
+}
+
+.gp_tb11_fb {
+    background:#FFFFFF url(images_gift/gp_search.png) no-repeat 4px 4px;
+    padding:4px 4px 4px 22px;
+    margin:12px 10px;
+    border:1px solid #CCCCCC;
+    width:250px;
+    height:28px;
+	float:right;
+}
+
+/* Image in submit */
+.gp_tb12 {
+    border:solid 1px #FFC0CB;
+    padding:3px 7px;
+    margin:0px;
+    text-transform:uppercase;
+    color:#333;
+    cursor:pointer;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFAFA), to(#FFC0CB));
+    background-image: -webkit-linear-gradient(top, #FFFAFA, #FFC0CB);
+    background-image: -moz-linear-gradient(top, #FFFAFA, #FFC0CB);
+    background-image: -ms-linear-gradient(top, #FFFAFA, #FFC0CB);
+    background-image: -o-linear-gradient(top, #FFFAFA, #FFC0CB);
+    background-image: linear-gradient(top, #FFFAFA, #FFC0CB);
+    border-radius: 3px;
+}
+
 .post { margin: 0 20px 0 0; }
 
 .entry-content { 
     clear: both;
-    margin-left: 10%;
+    /*margin-left: 10%;*/
+    margin: 33px;
+}
+
+.entry-content ul {
+ 	margin: 0px;
+	padding: 0px;
+	font-size: 17px;
+}
+
+.entry-content li {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	border-bottom: 1px dashed #FFC0CB;
+	padding: 17px 0px;
+}
+
+#content_gp_middle {
+    background: url(images_gift/gp_contents_middle.gif) repeat-y 0% 0%;
+    margin: 13px 0px;
+}
+
+#content_gp_top {
+    background: url(images_gift/gp_contents_top.gif) no-repeat 0% 0%;
 }
 
 #content {
+    background: url(images_gift/gp_contents_bottom.gif) no-repeat 0% 100%;
     margin: 0px auto 0px;
-    padding: 0px;
+    padding: 13px 17px;
+    clear: both;
+    overflow: hidden;
+}
+
+#content .gp_social_wg {
+    float: right;
+    margin-right: -32px;
+    margin-bottom: 7px;
+}
+
+#content .gp_title {
+    background: url(images_gift/gp_title.png) repeat-y 0% 0%;
+    padding: 7px 0px 0px 13px;
+    margin: 0px;
     clear: both;
 }
 
-#content p{
-    padding: 0px 0 15px 0px;
-    margin: 0px;
-    line-height: 20px;
-    font-size: 13.5px;
+#content .gp_title h2 {
+    color: white;
+    font-size: 17px;
+    padding: 0px;
+    margin: 0px
 }
 
-#content p img{
-    float: left;
-    border: none;
-    margin-right: 15px;
-    margin-bottom: 10px;
+#content .gp_title_page {
+    border-left: 12px solid #FFC0CB;	
+    padding: 0px 0px 0px 13px;
+    margin: 0px 0px 0px 13px;
 }
+
+#content .gp_title_page h2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#content .gp_top_main {
+    width: 827px;
+    margin: 12px 0px 12px 7px;
+    overflow: hidden;
+}
+
+#content .gp_top_main ul {
+    list-style-type: none;
+    /*margin: 7px 23px;*/
+    padding: 0px;
+}
+
+#content .gp_top_main li {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#content .gp_margin_1 {
+	margin: 7px 23px;
+}
+
+#content .gp_top_main_desc {
+    border-top: medium solid #FFC0CB;
+    border-bottom: medium solid #FFC0CB;
+    float: left;
+    margin: 0px;
+    padding: 7px;
+    width: 350px;
+}
+
+#content .gp_top_main_desc p {
+    font-size: 11.5px;
+}
+
+#content .gp_top_main_search {
+    float: left;
+    margin: 0px 0px 0px 57px;
+    padding: 20px 25px 15px;
+    background: rgb(255, 247, 248);
+    border: 1px solid #FFC0CB;
+}
+
+#content .gp_top_main_search p{
+    font-size: 11.5px;
+    margin:0px;
+}
+
+#content .gp_top_main_search a img{
+    margin-left:12px;
+    margin-top:7px;
+}
+
+#content .gp_top_main_search a:hover img{
+    opacity:0.8;
+    filter: alpha(opacity=80);
+    -ms-filter: "alpha( opacity=80 )";
+    background: #fff;
+    margin-left:12px;
+    margin-top:7px;
+}
+
+#content .gp_top_main_search h4{
+    border-left: 5px solid #FFC0CB; padding-left:10px;
+    border-bottom: 1px solid #FFC0CB;
+    padding-left: 10px;
+    padding-bottom: 3px;
+    font-weight: normal;
+    margin: 0px 0px 5px -10px;
+}
+
+#content .gp_top_main_search ul{
+	padding: 0px 0px 3px 0px;
+	border-bottom: dashed 1px pink;
+}
+
+#content .gp_top_fb_search {
+	margin: 0px;
+	padding: 0px;
+	background: rgb(255, 247, 248);
+    border: 1px solid #FFC0CB;
+	width: 95%;
+}
+
+#content .gp_top_category {
+    padding: 0px 23px;
+}
+
+#content .gp_top_category h4{
+    border-left: 5px solid #FFC0CB; padding-left:10px;
+    border-bottom: 1px solid #FFC0CB;
+    padding-left: 10px;
+    padding-bottom: 3px;
+    font-weight: normal;
+    margin: 7px 0px 5px -10px;
+    clear: both;
+    overflow: hidden;
+}
+
+#content .gp_top_category ul {
+}
+
+#content .gp_top_category li {
+    float: left;
+    margin: 0px;
+    padding: 0px 23px 13px 0px;
+}
+
+/*#content p {
+  padding: 0px 0 15px 0px;
+  margin: 0px;
+  line-height: 20px;
+  font-size: 13.5px;
+  }*/
+
+/*#content p img{
+  float: left;
+  border: none;
+  margin-right: 10.5px;
+  margin-bottom: 10px;
+  }*/
 
 #content h1 {
     color: #333333;
@@ -333,6 +540,12 @@ a:hover {
     text-decoration: none;
 }
 
+#content h3 {
+    background: url(images_gift/gp_title_img.png) no-repeat 0% 0%;
+    padding: 10px 37px;
+    margin: 0px;
+}
+
 #content ol{
     margin: 0px 0px 0px 20px;
     padding: 0px 0px 15px 0px;
@@ -346,6 +559,8 @@ a:hover {
 #contentmiddle {
     margin: 20px 0px;
     padding: 0px;
+    overflow: hidden;
+	clear: both;
 }
 
 #contentmiddle p img{
@@ -427,6 +642,13 @@ blockquote{
     float: left;
 }
 
+#content_archive h4 {
+    margin: 3% 0px 6% 10%;
+    padding: 0px;
+    font-size: 17px;
+    float: left;
+}
+
 #contentmiddle ul li {
     margin: 0px;
     padding: 5px 0px 0px 0px;
@@ -473,20 +695,22 @@ blockquote{
  ************************************************/
 
 #footer {
+    background: #FFF url(images_gift/gp_bg_footer.gif) repeat-x 0 0;
     color: #414141;
     margin: 0px auto 0px;
     padding: 10px 0px 10px 0px;
     text-align: center;
+    border-top: 1px solid #CCC;
 }
 
 #footer a, #footer a:visited {
     /*color: #C0C0C0;*/
-    text-decoration: underline;
+    /*text-decoration: none;*/
 }
 
 #footer a:hover {
-    color: #999999;
-    text-decoration: underline;
+    /*color: #999999;*/
+    /*text-decoration: underline;*/
 }
 
 /************************************************
@@ -664,10 +888,11 @@ p.comments_link  img{
 }
 
 #gift_style2 {
-    padding: 77px 0px 13px 0px;
+    padding: 13px 0px 13px 0px;
     /*color: #C0C0C0;*/
     clear: left;
     text-align: center;
+    font-size: 11.5px;
 }
 
 #gift_style_main {
@@ -689,8 +914,15 @@ p.comments_link  img{
     text-align: center;
 }
 
+.gift_line {
+	border-bottom: 1px dashed #FFC0CB;
+	clear: both;
+}
+
 #gift_breadcrumb ul {
     list-style-type: none;
+    margin: 0px;
+    padding: 12px;
 }
 
 #gift_breadcrumb li {
@@ -708,11 +940,11 @@ p.comments_link  img{
     color: white;
 }
 
-.fb_button:hover{
+.fb_button:hover {
     background-color: #3b5998;
 }
 
-.fb_button:active{
+.fb_button:active {
     background: #6d84b4;
 }
 
@@ -744,4 +976,193 @@ p.comments_link  img{
     background-color: #48a9e4;
     padding: 3px;
     color: black;
+}
+
+/***********************************************
+ *     星マーク(評価)
+ ************************************************/
+
+.starlevel5 {
+    background-image: url('images/starlevels.gif'); /*星画像*/
+    background-repeat: no-repeat; /* 繰り返しはナシ */
+    width: 75px;                  /* 横幅は星５つ分 */
+    height: 15px;                 /* 高さは星１つ分 */
+}
+.star50 { background-position: left top; }
+.star40 { background-position: -15px top; }
+.star30 { background-position: -30px top; }
+.star20 { background-position: -45px top; }
+.star10 { background-position: -60px top; }
+.star00 { background-position: -75px top; }
+
+.star45 { background-position: -150px top; }
+.star35 { background-position: -165px top; }
+.star25 { background-position: -180px top; }
+.star15 { background-position: -195px top; }
+.star05 { background-position: -210px top; }
+
+/************************************************
+ *     サイドボックス
+ ************************************************/
+
+#sideNavigation {
+    float: left;
+    width: 165px;
+    margin-bottom: 30px;
+    font: 13px/1.231 sans-serif;
+}
+
+#sideNavigation #sideMenu {
+    text-indent: -5000px;
+    background: url("images/snMenu_h2.gif") no-repeat 0% 0%;
+    height: 34px;
+}
+
+#sideNavigation .inner {
+    border: 1px solid #F279B0;
+    background: #FFF4F8;
+    padding-top: 10px;
+}
+
+#sideNavigation span.title02 {
+    color: #F13E8F;
+    font-size: 109%;
+    font-weight: bold;
+    padding-left: 10px;
+    line-height: normal;
+    margin-bottom: 5px;
+}
+
+#sideNavigation ul {
+    background: url("images/line_dot_pink.gif") repeat-x 0% 100%;
+    padding: 0px 10px 10px;
+    margin-bottom: 10px;
+}
+
+.arrow li {
+    background: url("images/icon_li.gif") no-repeat 0px 0.5em;
+    padding-left: 10px;
+    line-height: 18px;
+    list-style: none;
+}
+
+#sideNavigation ul li {
+    line-height: 1.6;
+}
+
+#sideNavigation ul.end {
+    background: none;
+}
+
+#sideNavigation p.li2 {
+    margin-top: 10px;
+}
+
+.right {
+    text-align: right;
+}
+
+#sideNavigation p.li2 a {
+    padding-left: 10px;
+    background: url("images/icon_li3.gif") no-repeat 0 50%;
+}
+
+
+/*****************************************************
+ *  * generic styling for ALS elements: outer container
+ *******************************************************/
+
+.als-container {
+	position: relative;
+	width: 100%;
+	margin: 0px auto;
+	z-index: 0;
+}
+
+/****************************************
+ *  * viewport styling
+ ****************************************/
+
+.als-viewport {
+	position: relative;
+	overflow: hidden;
+	margin: 0px auto;
+}
+
+/***************************************************
+ *  * wrapper styling
+ * **************************************************/
+
+.als-wrapper {
+	position: relative;
+	/* if you are using a list with <ul> <li> */
+	list-style: none;
+}
+
+/*************************************
+ *  * item: single list element
+ * ************************************/
+
+.als-item {
+	position: relative;
+	display: block;
+	text-align: center;
+	cursor: pointer;
+	float: left;
+}
+
+/***********************************************
+ *  * prev, next: buttons styling
+ ***********************************************/
+ 
+.als-prev, .als-next {
+	position: absolute;
+	cursor: pointer;
+	clear: both;
+}
+
+/**************************
+ *  * specific als elements
+ *  * styling for #lista1
+ ***************************/
+
+#lista1 {
+	margin: 30px auto 40px auto;
+}
+
+#lista1 .als-item {
+	margin: 0px 30px;
+	min-height: 140px;
+	min-width: 128px;
+}
+
+#lista1 .als-item img {
+	position: relative;
+	display: block;
+	vertical-align: middle;
+	margin: 3px 0px;
+}
+
+#lista1 .als-prev, #lista1 .als-next {
+	top: 58px;
+	width: 15px;
+	height: 22px;
+}
+
+#lista1 .als-prev {
+	left: 40px;
+}
+
+#lista1 .als-next {
+	right: 40px;
+}
+
+#lista2 {
+	width: 93px;
+	font-size: 11.5px;
+	text-align: left;
+}
+
+#lista2 img {
+	height: 90px;
 }

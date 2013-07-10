@@ -1,14 +1,18 @@
 <?php get_header(); ?>
 
-<div id="content">
+<div id="content_gp_middle">
+  <div id="content_gp_top">
+    <div id="content">
 
-  <?php /* ?>
-  <?php include(TEMPLATEPATH."/l_sidebar.php");?>
-  <?php */ ?>
+      <?php /* ?>
+      <?php include(TEMPLATEPATH."/l_sidebar.php");?>
+      <?php */ ?>
 
-  <div id="contentmiddle">
+      <div class="gp_social_wg">
+	<?php echo get_the_social_widgets();?>
+      </div>
 
-    <?php
+      <?php
      $name = $_GET["s"];
 $fbid = $_GET["fbid"];
 $sex = $_GET["sex"];
@@ -40,66 +44,61 @@ foreach( $keywords as $keyword ){
 }
 ?>
 
-<div id="gift_style_main">
-
-  <div class="gift_list_box">
-
-    <h3><?php echo $name; ?>　さんへのお勧めプレゼント！</h3>
-    プレゼント検索キーワード：　<span style="font-size: 14px; font-wegiht: bold; color: red;"><?php echo $s_keyword; ?></span>　
-    <span class="watch_messages">
-      <button class="ms_button" disabled="true">記事内容を見る</button>
-      <span class="messages">
-	<ul>
-	  <?php
-    foreach( $messages as $message ){
-    $r_message = str_replace( $s_keyword, '<span style="font-size: 14px; font-wegiht: bold; color: red;">' . $s_keyword . '</span>', $message);
-    echo "<li>" . $r_message . "</li>";
-}
-?>
-	</ul>
-      </span>
-    </span>
-    <br /><br />
-
-    <ul id="itemlist">
-      <?php foreach ($response as $item): ?>
-      <ul>
-	<?php if (!empty($item['smallImageUrls'][0]['imageUrl'])): ?>
-	<li class="image">
-	  <a href="<?php echo h($item['affiliateUrl']) ?>" class="itemname" title="<?php echo h($item['itemName']) ?>" target="_blank">
-	  <img src="<?php echo h($item['mediumImageUrls'][0]['imageUrl']) ?>">
-	</a>
-      </li>
-      <?php endif; ?>
-      <!--<li class="addbookmark"><a href="bookmark.php?itemCode=<?php echo h($item['itemCode']) ?>&amp;keyword=<?php echo h($keyword) ?>&amp;page=<?php echo h($page) ?>">ブックマークへ追加</a></li>-->
-      <li class="item">
-	<a href="<?php echo h($item['affiliateUrl']) ?>" class="itemname" title="<?php echo h($item['itemName']) ?>" target="_blank">
-	<?php echo h(mb_strimwidth($item['itemName'], 0, 50, '...', 'UTF-8')) ?></a>
-      </li>
-      <li class="price"><?php echo h(number_format($item['itemPrice'])) ?>円</li>
-      <li class="aflink">
-	> <a href="<?php echo h($item['affiliateUrl']) ?>" class="itemname" target="_blank">
-	商品詳細はこちらから</a>
-      </li>
-      <!--<li class="description"><?php echo h($item['itemCaption']) ?></li>-->
-    </ul>
-
-    <hr size="0.7px" noshade />
-
-    <?php endforeach; ?>
-  </ul>
-
+<div class="gp_title">
+  <h2><?php echo $name; ?>　さんへのお勧めプレゼント！</h2>
 </div>
-<div class="gift_search_box">
 
+<div class="gp_top_main">
+  <p>プレゼント検索キーワード： [ <?php echo $s_keyword; ?> ]</p>
+
+  <div id="lista1">
+    <div class="als-container" id="my-als-list">
+      <span class="als-prev"><img src="<?php echo get_settings('home'); ?>/wp-content/themes/nightlife/images_gift/gp_thin_left_arrow.png" alt="prev" title="previous" /></span>
+      <div class="als-viewport">
+	<ul class="als-wrapper">
+	  <?php foreach ($response as $item): ?>
+	  <?php if (!empty($item['smallImageUrls'][0]['imageUrl'])): ?>
+	  <li class="als-item">
+	    <div id="lista2">
+	      <a href="<?php echo h($item['affiliateUrl']) ?>" class="itemname" title="<?php echo h($item['itemName']) ?>" target="_blank"><img src="<?php echo h($item['mediumImageUrls'][0]['imageUrl']) ?>"></a>
+	      <p><a href="<?php echo h($item['affiliateUrl']) ?>" class="itemname" title="<?php echo h($item['itemName']) ?>" target="_blank"><?php echo h(mb_strimwidth($item['itemName'], 0, 30, '...', 'UTF-8')) ?></a></p>
+	      <?php echo '<div class="starlevel5 star' . sprintf('%02d',floor($item['reviewAverage']*2)*5) . '"></div>' ?>
+	      <p><?php echo h(number_format($item['itemPrice'])) ?>円</p>
+	      <p>[ <a href="<?php echo h($item['affiliateUrl']) ?>" class="itemname" target="_blank">詳細はこちら</a> ]</p>
+	      <br/><br/>
+	    </div>
+	  </li>
+	  <?php endif; ?>
+	  <?php endforeach; ?>
+	</ul> <!-- als-wrapper end -->
+      </div> <!-- als-viewport end -->
+      <span class="als-next"><img src="<?php echo get_settings('home'); ?>/wp-content/themes/nightlife/images_gift/gp_thin_right_arrow.png" alt="next" title="next" /></span> <!-- "next" button -->
+    </div> <!-- als-container end -->
+  </div>
+</div>
+<h3>もっと検索したい！</h3>
+<div class="gp_top_main_desc">
+  <p>もっとよいプレゼントがないかな。</p>
+  <p>そんなときは、プレゼント絞り込み検索をお勧めします。</p>
+  <p>プレゼントしたい人の「性別」や「年代」「あなたとの関係」等の条件で絞っていただくと、よりマッチした商品が表示されます。</p>
+  <hr style="border-top: 1px dashed pink;width: 100%;"/>
+  <p>[ 今回の検索で参考にした記事 ]</p>
+  <p>
+    <?php
+    foreach( $messages as $message ){
+    $r_message = str_replace( $s_keyword, '<span style="font-size: 12.5px; font-wegiht: bold; color: red;">' . $s_keyword . '</span>', $message);
+    echo "<li style=\"list-style-type: none;\">" . $r_message . "</li>"; } ?>
+  </p>
+  <p>（※赤字は商品検索キーワードです。）</p>
+</div>
+<div class="gp_top_main_search">
+  <h4>プレゼント絞り込み検索</h4>
   <form method="GET" name="search">
-    <input type="hidden" name="s" value="<?php echo $name; ?>" />
-    <h3>もっと検索したい！</h3><br />
-    <?php echo $name; ?>　さんの<br /><br />
+    <input class="gp_tb11" type="text" name="s" placeholder="<?php echo $_GET["s"]; ?>" value="<?php echo $_GET["s"]; ?>"> 
 
     <ul>
       <b>性別は？</b>
-      <input type="radio" name="sex" value="0" checked>男性
+      <input type="radio" name="sex" value="0" checked="">男性
       <input type="radio" name="sex" value="1">女性
     </ul>
 
@@ -129,7 +128,7 @@ foreach( $keywords as $keyword ){
 
     <ul>
       <b>あなたの予算は？</b>
-      <input type="text" name="min" size="3" />円から<input type="text" name="max" size="3" />円まで
+      <input type="text" name="min" size="3">円から<input type="text" name="max" size="3">円まで
     </ul>
 
     <ul>
@@ -144,7 +143,7 @@ foreach( $keywords as $keyword ){
       </select>
     </ul>
 
-    <div class="gift_center"><input type="submit" value="これで探す！" /></div>
+    <div class="gift_center"><input class="gp_tb12" type="submit" value="上記で絞り込み検索する"></div>
   </form>
 
   <?php // 検索パラメータからFORMの初期値をセット(GP-14) ?>
@@ -159,15 +158,48 @@ foreach( $keywords as $keyword ){
     document.search.category.value = "<?php echo $category ?>";
   </script>
 
+  <br>
+    <h4>ソーシャルサービスへのログイン</h4>
+    <p><a href="/fb/"><img src="http://gift-planner.net:8080/wp-content/themes/nightlife/images_gift/gp_facebook_l.jpg" alt="Facebook" width="30px" height="30px"></a>
+    <!--<a href="/tw/"><img src="http://gift-planner.net:8080/wp-content/themes/nightlife/images_gift/gp_twitter.jpg" alt="Twitter" width="30px" height="30px"/></a>-->
+  </p>
+</div>
+
+<!--
+    <h3><?php echo $name; ?>　さんへのお勧めプレゼント！</h3>
+    プレゼント検索キーワード：　<span style="font-size: 14px; font-wegiht: bold; color: red;"><?php echo $s_keyword; ?></span>　
+    <span class="watch_messages">
+    <button class="ms_button" disabled="true">記事内容を見る</button>
+    <span class="messages">
+    <ul>
+    <?php
+	foreach( $messages as $message ){
+	$r_message = str_replace( $s_keyword, '<span style="font-size: 14px; font-wegiht: bold; color: red;">' . $s_keyword . '</span>', $message);
+	echo "<li>" . $r_message . "</li>";
+    }
+?>
+</ul>
+</span>
+</span>
+<br /><br />
+-->
+
+<br style="clear: both;"/>
+<br/>
+
+<div class="gp_top_main">
+  <h3>プレゼントカテゴリー</h3>
+  <div class="gp_top_category">
+    <?php include(TEMPLATEPATH."/GP_present_category.php"); ?>
+  </div>
+</div><!-- gp_top_main -->
+
 </div>
 
 </div>
 
 </div>
 
-<?php echo get_the_social_widgets();?>
-
-<br/><br/>
 <!-- The main column ends  -->
 
 <?php get_footer(); ?>

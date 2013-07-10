@@ -2,7 +2,7 @@
 <div id="gift_breadcrumb">
   <ul>
     <li><a href="<?php echo home_url(); ?>/">HOME</a></li>
-    <li>&gt;</li>
+    <li>-</li>
     <?php if(is_search()): /* 検索結果表示 */ ?>
     <li><?php echo $_GET["s"]; ?>　さんへのお勧めプレゼント！</li>
 
@@ -18,7 +18,7 @@
     <?php $ancestors = array_reverse(get_ancestors( $cat -> cat_ID, 'category' )); /* 祖先カテゴリーの取得 */ ?>
     <?php foreach($ancestors as $ancestor): /* 親カテゴリーの数だけ繰り返し処理 */ ?>
     <li><a href="<?php echo get_category_link($ancestor); ?>"><?php echo get_cat_name($ancestor); ?></a></li>
-    <li>&gt;</li>
+    <li>-</li>
     <?php endforeach; ?>
     <?php endif; ?>
     <li><?php echo $cat -> cat_name; ?></li>
@@ -30,7 +30,7 @@
     <?php $ancestors = array_reverse( $post-> ancestors ); /* 祖先ページの ID を取得 */ ?>
     <?php foreach($ancestors as $ancestor): /* 祖先ページの数だけ繰り返し処理 */ ?>
     <li><a href="<?php echo get_permalink($ancestor); ?>"><?php echo get_the_title($ancestor); ?></a></li>
-    <li>&gt;</li>
+    <li>-</li>
     <?php endforeach; ?>
     <?php endif; ?>
     <li><?php echo $post -> post_title; ?></li>
@@ -44,11 +44,11 @@
     <?php $ancestors = array_reverse(get_ancestors( $cat -> cat_ID, 'category' )); /* 祖先カテゴリーを取得 */?>
     <?php foreach($ancestors as $ancestor): ?>
     <li><a href="<?php echo get_category_link($ancestor); ?>"><?php echo get_cat_name($ancestor); ?></a></li>
-    <li>&gt;</li>
+    <li>-</li>
     <?php endforeach; ?>
     <?php endif; ?>
     <li><a href="<?php echo get_category_link($cat -> cat_ID); ?>"><?php echo $cat-> cat_name; ?></a></li>
-    <li>&gt;</li>
+    <li>-</li>
     <li><?php echo $post -> post_title; ?></li>
 
     <?php else: /* 上記以外 */?>

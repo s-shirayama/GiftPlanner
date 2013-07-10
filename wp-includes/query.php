@@ -1671,7 +1671,8 @@ class WP_Query {
 			$this->set_404();
 
 		// Add by S.Shirayama
-		if ( preg_match('/^\/fb\//', $_SERVER['REQUEST_URI'] ) ){
+		if ( preg_match('/^\/fb\//', $_SERVER['REQUEST_URI'] ) ||
+		     preg_match('/^\/ranking\//', $_SERVER['REQUEST_URI'] ) ){
 		  $this->is_404 = false;
 		  $this->is_home = true;
 		}

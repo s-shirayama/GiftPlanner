@@ -1,4 +1,4 @@
-<ul>
+<ul class="gp_margin_1">
 <?php
  include 'GP_functions.php';
  $posts = kiji_feed('ニュース',5);
