@@ -69,4 +69,5 @@ $response = $responses[0]['items'];
     </div><!-- content -->
   </div><!-- content_gp_top -->
 </div><!-- content_gp_middle -->
+</div><!-- wrap -->
 <?php get_footer(); ?>

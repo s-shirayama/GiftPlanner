@@ -159,5 +159,5 @@ foreach( $friends['data'] as $friend ){
     </div><!-- #content -->
   </div><!-- #content_gp_top -->
 </div><!-- #content_gp_middle -->
-
+</div><!-- wrap -->
 <?php get_footer(); ?>

@@ -202,4 +202,6 @@ foreach( $keywords as $keyword ){
 
 <!-- The main column ends  -->
 
+</div><!-- wrap -->
+
 <?php get_footer(); ?>
