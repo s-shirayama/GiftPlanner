@@ -11,6 +11,8 @@
   &nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="<?php echo get_settings('home'); ?>/category/開発者ブログ">開発者ブログ</a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="<?php echo get_settings('home'); ?>/category/企画運営ブログ">企画運営ブログ</a>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="<?php echo get_settings('home'); ?>/sitemap">サイトマップ</a>
 </div>
 <br/><br/>
