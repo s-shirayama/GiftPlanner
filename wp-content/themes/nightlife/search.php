@@ -58,7 +58,7 @@ foreach( $keywords as $keyword ){
 	<ul class="als-wrapper">
 	  <?php foreach ($response as $item): ?>
 	  <?php if (!empty($item['smallImageUrls'][0]['imageUrl'])): ?>
-	  <li class="als-item">
+	  <li class="als-item gp_top_main_sub">
 	    <div id="lista2">
 	      <a href="<?php echo h($item['affiliateUrl']) ?>" class="itemname" title="<?php echo h($item['itemName']) ?>" target="_blank"><img src="<?php echo h($item['mediumImageUrls'][0]['imageUrl']) ?>"></a>
 	      <p><a href="<?php echo h($item['affiliateUrl']) ?>" class="itemname" title="<?php echo h($item['itemName']) ?>" target="_blank"><?php echo h(mb_strimwidth($item['itemName'], 0, 30, '...', 'UTF-8')) ?></a></p>

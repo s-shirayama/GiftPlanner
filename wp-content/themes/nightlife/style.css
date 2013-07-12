@@ -407,6 +407,11 @@ a:hover {
     /*padding: 7px 0px;*/
 }
 
+#content .gp_top_main .gp_top_main_sub {
+	margin: 0px;
+	padding: 0px;
+}
+
 #content .gp_margin_1 {
 	margin: 7px 23px;
 }
