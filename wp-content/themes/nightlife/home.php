@@ -47,7 +47,7 @@
   <div class="gp_top_main">
     <h3>ギフトプランナー新着情報</h3>
     <?php /* ニュースカテゴリ記事新着 */ include 'GP_news_feed.php'; ?>
-	<p style="margin-left:23px;">過去の情報は<a href="<?php echo get_settings('home');?>/category/ニュース">こちら</a></p>
+	<p style="margin-right:23px; text-align:right;">- 過去の情報は<a href="<?php echo get_settings('home');?>/category/ニュース">こちら</a> -</p>
   </div>
 
 <?php /* include(TEMPLATEPATH."/sidemenu.php"); */ ?>

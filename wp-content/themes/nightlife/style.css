@@ -403,8 +403,8 @@ a:hover {
 
 #content .gp_top_main li {
     list-style-type: none;
-    margin: 0px;
-    padding: 0px;
+    /*margin: 13px 0px;*/
+    /*padding: 7px 0px;*/
 }
 
 #content .gp_margin_1 {
@@ -917,6 +917,12 @@ p.comments_link  img{
 .gift_line {
 	border-bottom: 1px dashed #FFC0CB;
 	clear: both;
+}
+
+.gift_line2 {
+	border-bottom: 1px dashed #FFC0CB;
+	margin: 13px 0px;
+	padding: 7px 0px;
 }
 
 #gift_breadcrumb ul {

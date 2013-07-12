@@ -12,6 +12,8 @@
   <li><a href="/ranking/pregnant/">妊婦</a></li>
   <!--<p class="right li2"><a href="/ranking/target_list">あげたい人一覧を見る</a></p>-->
 </ul>
+<br style="clear:both;"/>
+<br style="clear:both;"/>
 <h4>イベントで絞り込む</h4>
 <ul>
   <li><a href="/ranking/birthday/">誕生日</a></li>
@@ -27,3 +29,4 @@
   <!--<p class="right li2"><a href="/ranking/event_list">イベント一覧を見る</a></p>-->
 </ul>
 <ul class="arrow end">
+<br style="clear:both;"/>
