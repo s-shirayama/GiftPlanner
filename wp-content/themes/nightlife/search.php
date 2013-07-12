@@ -160,8 +160,8 @@ foreach( $keywords as $keyword ){
 
   <br>
     <h4>ソーシャルサービスへのログイン</h4>
-    <p><a href="/fb/"><img src="http://gift-planner.net:8080/wp-content/themes/nightlife/images_gift/gp_facebook_l.jpg" alt="Facebook" width="30px" height="30px"></a>
-    <!--<a href="/tw/"><img src="http://gift-planner.net:8080/wp-content/themes/nightlife/images_gift/gp_twitter.jpg" alt="Twitter" width="30px" height="30px"/></a>-->
+    <p><a href="/fb/"><img src="<?php echo get_settings('home'); ?>/wp-content/themes/nightlife/images_gift/gp_facebook_l.jpg" alt="Facebook" width="30px" height="30px"></a>
+    <!--<a href="/tw/"><img src="<?php echo get_settings('home'); ?>/wp-content/themes/nightlife/images_gift/gp_twitter.jpg" alt="Twitter" width="30px" height="30px"/></a>-->
   </p>
 </div>
 
