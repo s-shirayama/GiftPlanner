@@ -41,6 +41,10 @@
       <div class="blogtitle">
 	<a href="<?php echo get_settings('home'); ?>/"><?php // bloginfo('name'); ?><img src="<?php echo get_settings('home'); ?>/wp-content/themes/nightlife/images_gift/gp_logo.png" alt="プレゼント選びのギフトプランナー" /></a>
       </div>
+	  <div class="blogtitle2">
+		<img src="<?php echo get_settings('home'); ?>/wp-content/themes/nightlife/images_gift/gp_img_allow.png" alt="" width="12px" height="12px" />
+		<a href="<?php echo get_settings('home'); ?>/gp_howto">ご利用案内</a>
+	  </div>
 	<!-- <?php echo get_the_social_widgets(); ?> -->
 	</div>
 

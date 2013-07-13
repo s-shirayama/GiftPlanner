@@ -148,6 +148,7 @@ a:hover {
 #header {
     margin: 0px auto 0px;
     padding: 0px 0px 0px 0px;
+	overflow: hidden;
 }
 
 .blogtitle {
@@ -155,6 +156,7 @@ a:hover {
     font-size: 10px;
     position: relative;
     top: -8px;
+	float: left;
 }
 
 .blogtitle a {
@@ -171,6 +173,17 @@ a:hover {
 .blogtitle p {
     padding: 0px 0px 0px 23px;
     margin-top: -7px;
+}
+
+.blogtitle2 {
+	margin-top: 27px;
+	float: right;
+	font-size: 10px;
+}
+
+.blogtitle2 img {
+	position: relative;
+	top: 3px;
 }
 
 /************************************************
