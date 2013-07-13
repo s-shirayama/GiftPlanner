@@ -39,6 +39,13 @@ h1 {
     text-align: right;
 }
 
+a:hover img {
+    opacity:0.6;
+    filter: alpha(opacity=60);
+    -ms-filter: "alpha( opacity=80 )";
+    background: #fff;
+}
+
 /*h2 {
   color: #333333;
   font-size: 24px;
@@ -155,7 +162,7 @@ a:hover {
     margin: 0px;
     font-size: 10px;
     position: relative;
-    top: -8px;
+    top: -3px;
 	float: left;
 }
 
