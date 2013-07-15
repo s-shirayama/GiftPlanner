@@ -76,6 +76,8 @@ foreach( $keywords as $keyword ){
     </div> <!-- als-container end -->
   </div>
 </div>
+
+<div class="gp_top_main">
 <h3>もっと検索したい！</h3>
 <div class="gp_top_main_desc">
   <p>もっとよいプレゼントがないかな。</p>
@@ -164,7 +166,7 @@ foreach( $keywords as $keyword ){
     <!--<a href="/tw/"><img src="<?php echo get_settings('home'); ?>/wp-content/themes/nightlife/images_gift/gp_twitter.jpg" alt="Twitter" width="30px" height="30px"/></a>-->
   </p>
 </div>
-
+</div>
 <!--
     <h3><?php echo $name; ?>　さんへのお勧めプレゼント！</h3>
     プレゼント検索キーワード：　<span style="font-size: 14px; font-wegiht: bold; color: red;"><?php echo $s_keyword; ?></span>　
@@ -184,7 +186,6 @@ foreach( $keywords as $keyword ){
 <br /><br />
 -->
 
-<br style="clear: both;"/>
 <br/>
 
 <div class="gp_top_main">
