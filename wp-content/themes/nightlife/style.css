@@ -339,6 +339,23 @@ a:hover {
     border-radius: 3px;
 }
 
+.gp_tb13 {
+	padding: 0px 0px 6px 0px;
+	border-bottom: 1px dashed #FFC0CB;
+	overflow: hidden;
+}
+
+.gp_tb13 a {
+	float: right;
+	padding-right: 13px;
+	top: 5px;
+	position: relative;
+}
+
+.gp_tb13 form {
+	float: right;
+}
+
 .post { margin: 0 20px 0 0; }
 
 .entry-content { 
