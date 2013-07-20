@@ -21,7 +21,11 @@
     <a href="<?php echo get_category_link($ancestor); ?>"><?php echo get_cat_name($ancestor); ?></a> -
     <?php endforeach; ?>
     <?php endif; ?>
+	<?php if($cat != "") { ?>
     <?php echo $cat -> cat_name; ?>一覧
+    <?php } else { ?>
+    <?php the_time('Y'); echo '年' ?><?php the_time('M');?>の記事一覧
+    <?php }; ?>
     </h2>
 	</div>
 

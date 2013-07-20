@@ -66,7 +66,7 @@ a, a:visited {
 
 a:hover {
     color: #333333;
-	text-decoration: none;
+	text-decoration: underline;
 	font-weight:bold;
 }
 
@@ -185,7 +185,7 @@ a:hover {
 .blogtitle2 {
 	margin-top: 27px;
 	float: right;
-	font-size: 10px;
+	font-size: 11.5px;
 }
 
 .blogtitle2 img {
@@ -539,6 +539,18 @@ a:hover {
     padding: 0px 23px 13px 0px;
 }
 
+#content .gp_top_main_left {
+	float: left;
+	margin: 0px 3%;
+	padding: 0px;
+	width: 42%;
+}
+
+#content .gp_top_main_left h4 {
+	border-left: 7px solid #FFC0CB;
+	padding-left: 7px;
+}
+
 /*#content p {
   padding: 0px 0 15px 0px;
   margin: 0px;
@@ -741,7 +753,7 @@ blockquote{
     color: #414141;
     margin: 0px auto 0px;
     padding: 10px 0px 10px 0px;
-    text-align: center;
+    /*text-align: center;*/
     border-top: 1px solid #CCC;
 }
 
@@ -926,13 +938,37 @@ p.comments_link  img{
 }
 
 #gift_infobar {
-    text-align: center;
+    /*text-align: center;*/
+	width: 850px;
+	margin: 0px auto;
+	overflow: hidden;
+}
+
+#gift_infobar .gift_footer_content {
+	float: left;
+	width: 250px;
+}
+
+#gift_infobar .gift_footer_content ul {
+	border-left: 2px dashed #FFC0CB;
+	list-style: none;
+	padding: 0px 0px 0px 17px;
+	margin: 0px;
+}
+
+#gift_infobar .gift_footer_content li {
+	margin: 13px 0px;
+}
+
+#gift_infobar p {
+	font-weight: bold;
+	font-size: 14px;
 }
 
 #gift_style2 {
     padding: 13px 0px 13px 0px;
     /*color: #C0C0C0;*/
-    clear: left;
+    clear: both;
     text-align: center;
     font-size: 11.5px;
 }

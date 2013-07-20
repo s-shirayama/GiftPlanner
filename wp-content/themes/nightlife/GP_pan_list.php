@@ -11,7 +11,7 @@
     <?php elseif(is_404()): /* 404 Not Found */?>
     <li>404 Not found</li>
     <?php elseif(is_date()): /* 日付アーカイブ */?>
-
+	<li><?php echo the_time('Y'); echo '年' ?><?php the_time('M');?>の記事一覧</li>
     <?php elseif(is_category()): /* カテゴリーアーカイブ */?>
     <?php $cat = get_queried_object(); /* オブジェクトを取得 */ ?>
     <?php if($cat -> parent != 0): /* 親カテゴリーの有無 */?>

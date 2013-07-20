@@ -35,6 +35,17 @@
 	</script>
   </head>
   <body>
+	<!-- FaceBookウィジット用 START-->
+	<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		</script>
+	<!-- FaceBookウィジット用 END -->
 	<div id="wrap">
     <?php /* h1生成 */ include 'GP_h1_gen.php'; ?>
     <div id="header">
