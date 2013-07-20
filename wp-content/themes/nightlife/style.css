@@ -44,6 +44,15 @@ a:hover img {
     filter: alpha(opacity=60);
     -ms-filter: "alpha( opacity=80 )";
     background: #fff;
+	border-style:none;
+}
+
+a img {
+	border-style:none;
+}
+
+img {
+	border-style:none;
 }
 
 /*h2 {
