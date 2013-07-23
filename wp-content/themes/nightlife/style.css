@@ -20,7 +20,7 @@
 body {
     background: #EEE url(images_gift/gp_bg_container.gif) repeat-x 0% 0%;
     font-size: 12px;
-    font-family: 'メイリオ','Meiryo','ヒラギノ角ゴ Pro W3','Hiragino Kaku','MS UI Gothic';
+    font-family: 'Century Gothic','メイリオ','Meiryo','ヒラギノ角ゴ Pro W3','Hiragino Kaku','MS UI Gothic';
     margin: 0px auto 0px;
     padding: 0px;
 }
@@ -71,12 +71,14 @@ img {
 a, a:visited {
     color: #666666;
 	text-decoration: none;
+	font-family: 'Century Gothic','メイリオ','Meiryo','ヒラギノ角ゴ Pro W3','Hiragino Kaku','MS UI Gothic';
 }
 
 a:hover {
     color: #333333;
 	text-decoration: underline;
 	font-weight:bold;
+	font-family: 'Century Gothic','メイリオ','Meiryo','ヒラギノ角ゴ Pro W3','Hiragino Kaku','MS UI Gothic';
 }
 
 /************************************************
@@ -420,7 +422,7 @@ a:hover {
 #content .gp_title h2 {
     color: white;
     font-size: 17px;
-    padding: 0px;
+    padding: 0px 0px 3px 0px;
     margin: 0px
 }
 
@@ -766,16 +768,6 @@ blockquote{
     border-top: 1px solid #CCC;
 }
 
-#footer a, #footer a:visited {
-    /*color: #C0C0C0;*/
-    /*text-decoration: none;*/
-}
-
-#footer a:hover {
-    /*color: #999999;*/
-    /*text-decoration: underline;*/
-}
-
 /************************************************
  *	Search Form									*
  ************************************************/
@@ -796,7 +788,7 @@ blockquote{
     background: #EFEFEF url(images/search.gif);
     color: #333333;
     font-size: 11px;
-    font-family: Verdana, Helvetica, Sans-Serif;
+    font-family: 'Century Gothic','メイリオ','Meiryo','ヒラギノ角ゴ Pro W3','Hiragino Kaku','MS UI Gothic';
     padding: 3px;
     margin: 8px 0px 0px 10px;
     border: 1px solid #C0C0C0;

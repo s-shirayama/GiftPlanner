@@ -25,7 +25,11 @@
 		<h2><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 		<!--<p>カテゴリー <?php the_category(', ') ?></p>-->
 	</div>
-	<div class="entry-content"><?php the_content(__('続きを読む'));?></div>
+	<div class="entry-content">
+		<?php the_content(__('続きを読む'));?>
+		<br/>
+		<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="470" data-num-posts="3"></div>
+	</div>
 	<div style="clear:both;"></div>
 	<!--<?php trackback_rdf(); ?>-->
 	<!--<h1>コメント</h1>-->
