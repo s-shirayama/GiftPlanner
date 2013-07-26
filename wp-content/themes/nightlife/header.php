@@ -5,7 +5,18 @@
     <meta name="distribution" content="global" />
     <meta name="robots" content="follow, all" />
     <meta name="language" content="en, sv" />
-    <title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
+    <title>
+	<?php include 'GP_functions.php'; ?>
+	<?php
+		/* ランキングページ用 */
+		$url = preg_split('/\//',$_SERVER['REQUEST_URI']);
+		if($url[1]=='ranking') {
+			$gp_category_mst = get_gp_category_info_from_key( $url[2] );
+			echo $gp_category_mst[0] ?>に贈るプレゼント |  <?php bloginfo('name');
+		} else {
+	?>
+	<?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?><?php bloginfo('name'); }; ?>
+	</title>
     <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /><!-- leave this for stats please -->
     <link rel="Shortcut Icon" href="<?php echo get_settings('home'); ?>/wp-content/themes/nightlife/images/favicon.ico" type="image/x-icon" />
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />

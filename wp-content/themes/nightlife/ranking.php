@@ -1,10 +1,21 @@
+<?php get_header(); ?>
 <?php
 $url = preg_split('/\//',$_SERVER['REQUEST_URI']);
 $responses = get_ranking_info_from_key( $url[2], 10 );
 $response = $responses[0]['items'];
+$gp_category_mst = get_gp_category_info_from_key( $url[2] );
+$gp_category_name = $gp_category_mst[0];
+$gp_category_description = $gp_category_mst[1];
+$gp_category_image = $gp_category_mst[2];
 ?>
+<div id="gift_breadcrumb">
+  <ul>
+    <li><a href="<?php echo home_url(); ?>/">HOME</a></li>
+    <li>-</li>
+    <li><?php echo $gp_category_name; ?>に贈るプレゼント</li>
+  </ul>
+</div>
 
-<?php get_header(); ?>
 <div id="content_gp_middle">
   <div id="content_gp_top">
     <div id="content">
@@ -18,6 +29,11 @@ $response = $responses[0]['items'];
       <!-- <div class="gp_social_wg"><?php echo get_the_social_widgets();?></div> -->
  
 	  <div class="gp_top_main">
+
+    <div class="gp_title_page"><h2><?php echo $gp_category_name; ?>に贈るプレゼント</h2></div>
+    <div class="gp_top_rank_desc"><p><?php echo $gp_category_description; ?></p></div>
+	<div class="gp_top_rank_image"><img src="<?php echo get_settings('home'); ?>/wp-content/themes/nightlife/images_gift/<?php echo $gp_category_image; ?>" alt="<?php echo $gp_category_name; ?>" /></div>
+    <br style="clear:both;" /><br/>
 
 	  <?php $loop_no = 1; ?>
       <?php foreach( $responses as $response): ?>
@@ -34,7 +50,9 @@ $response = $responses[0]['items'];
     });
     </script>
 
-      <div class="gp_title_page"><h2><?php echo $response['genre']; ?></h2></div>
+      <!--<div class="gp_title_page">-->
+		<h3><?php echo $response['genre']; ?></h3>
+	  <!--</div>-->
 
 	<div id="lista1">
 	  <div class="als-container" id="my-als-list-<?php echo $loop_no; ?>">
@@ -71,6 +89,11 @@ $response = $responses[0]['items'];
 
 	  <?php $loop_no = $loop_no + 1;?>
 	  <?php endforeach; ?>
+
+    <h3>プレゼントカテゴリー</h3>
+    <div class="gp_top_category">
+    <?php include(TEMPLATEPATH."/GP_present_category.php"); ?>
+    </div>
 
 	  </div><!-- gp_top_main -->
     </div><!-- content -->
