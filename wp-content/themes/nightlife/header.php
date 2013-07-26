@@ -12,7 +12,7 @@
 		$url = preg_split('/\//',$_SERVER['REQUEST_URI']);
 		if($url[1]=='ranking') {
 			$gp_category_mst = get_gp_category_info_from_key( $url[2] );
-			echo $gp_category_mst[0] ?>に贈るプレゼント |  <?php bloginfo('name');
+			echo $gp_category_mst[0] ?>に贈るプレゼント | ギフトプランナー;
 		} else {
 	?>
 	<?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?><?php bloginfo('name'); }; ?>
