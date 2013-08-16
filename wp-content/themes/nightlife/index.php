@@ -28,6 +28,9 @@
 	<div class="entry-content">
 		<?php the_content(__('続きを読む'));?>
 		<br/>
+		<h4>おすすめ商品紹介：</h4>
+		<div><!-- Rakuten Widget FROM HERE --><script type="text/javascript">rakuten_design="slide";rakuten_affiliateId="11a05f2a.3f3d9bdd.11a05f2b.64a622ed";rakuten_items="ctsmatch";rakuten_genreId=0;rakuten_size="600x200";rakuten_target="_blank";rakuten_theme="gray";rakuten_border="off";rakuten_auto_mode="off";rakuten_genre_title="off";rakuten_recommend="on";</script><script type="text/javascript" src="http://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script><!-- Rakuten Widget TO HERE --></div>
+		<br style="clear:both;"/><br/>
 		<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="470" data-num-posts="3"></div>
 	</div>
 	<div style="clear:both;"></div>
