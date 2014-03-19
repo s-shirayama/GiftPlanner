@@ -33,9 +33,7 @@
 
       </div><!-- gp_top_main -->
 
-      <?php /* ?>
-      <?php include(TEMPLATEPATH."/l_sidebar.php");?>
-      <?php */ ?>
+      <?php /*include(TEMPLATEPATH."/l_sidebar.php");*/ ?>
 
   <div class="gp_top_main">
 	<h3>プレゼントカテゴリー</h3>
@@ -50,15 +48,16 @@
 	<p style="margin-right:23px; text-align:right;">- 過去の情報は<a href="<?php echo get_settings('home');?>/category/ニュース">こちら</a> -</p>
   </div>
 
-<!--
   <div class="gp_top_main">
    <h3>ギフトプランナーコンテンツ</h3>
    <?php include(TEMPLATEPATH."/GP_contents_feed.php"); ?>
    <?php include(TEMPLATEPATH."/GP_keyword_feed.php"); ?>
+<!--
+   <br style="clear:both;"/>
    <?php include(TEMPLATEPATH."/GP_fb_widget.php"); ?>
    <?php include(TEMPLATEPATH."/GP_tw_widget.php"); ?>
-  </div>
 -->
+  </div>
 
   <?php /* include(TEMPLATEPATH."/sidemenu.php"); */ ?>
 

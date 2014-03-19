@@ -185,6 +185,19 @@ function get_ranking_info_from_key($key, $count){
     return $result;
 }
 
+// 注目のキーワードを取得する関数
+// 引数は取得件数、ランダムソートの有無
+function get_notable_keyword( $num, $randomp ){
+    global $wpdb;
+    $result = array();
+    $sort = $randomp ? "rand()" : "sort";
+    $res = $wpdb->get_results("select keyword from gp_keyword_mst order by " . $sort . " limit " . $num, ARRAY_A);
+    foreach( $res as $keyword_info ){
+        array_push( $result, $keyword_info['keyword'] );
+    }
+    return $result;
+}
+
 // ランキング情報を取得する関数
 // 引数は性別、年代、ジャンル
 function get_ranking( $sex, $age, $genre ){
