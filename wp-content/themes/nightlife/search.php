@@ -25,6 +25,8 @@ $category  = $_GET["category"];
 if( $fbid && $facebook->getUser() ){
     $messages = fbid2messages( $fbid );
     $keywords = messages2keywords( $messages );
+} else if( isset($_GET["product"]) ) {
+    $keywords = array($name);
 } else {
     $messages = name2messages( $name );
     $keywords = messages2keywords( $messages );
@@ -83,15 +85,17 @@ foreach( $keywords as $keyword ){
   <p>もっとよいプレゼントがないかな。</p>
   <p>そんなときは、プレゼント絞り込み検索をお勧めします。</p>
   <p>プレゼントしたい人の「性別」や「年代」「あなたとの関係」等の条件で絞っていただくと、よりマッチした商品が表示されます。</p>
-  <hr style="border-top: 1px dashed pink;width: 100%;"/>
-  <p>[ 今回の検索で参考にした記事 ]</p>
-  <p>
-    <?php
-    foreach( $messages as $message ){
-    $r_message = str_replace( $s_keyword, '<span style="font-size: 12.5px; font-wegiht: bold; color: red;">' . $s_keyword . '</span>', $message);
-    echo "<li style=\"list-style-type: none;\">" . $r_message . "</li>"; } ?>
-  </p>
-  <p>（※赤字は商品検索キーワードです。）</p>
+  <?php if( isset( $messages ) ){ ?>
+    <hr style="border-top: 1px dashed pink;width: 100%;"/>
+    <p>[ 今回の検索で参考にした記事 ]</p>
+    <p>
+      <?php
+      foreach( $messages as $message ){
+      $r_message = str_replace( $s_keyword, '<span style="font-size: 12.5px; font-wegiht: bold; color: red;">' . $s_keyword . '</span>', $message);
+      echo "<li style=\"list-style-type: none;\">" . $r_message . "</li>"; } ?>
+    </p>
+    <p>（※赤字は商品検索キーワードです。）</p>
+  <?php } ?>
 </div>
 <div class="gp_top_main_search">
   <h4>プレゼント絞り込み検索</h4>
